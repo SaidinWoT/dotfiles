@@ -1,0 +1,9 @@
+URxvt*foreground: green
+URxvt*background: black
+
+URxvt*scrollBar: False
+
+URxvt.perl-ext: default,matcher
+URxvt.urlLauncher: luakit
+URxvt.keysym.C-Delete: perl:matcher
+URxvt.underlineURLs: true
