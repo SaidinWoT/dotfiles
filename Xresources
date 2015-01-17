@@ -1,9 +1,98 @@
-URxvt*foreground: green
-URxvt*background: black
+! ! Solarized Common
+! #define yellow        #b58900
+! #define orange        #cb4b16
+! #define red           #dc322f
+! #define magenta       #d33682
+! #define violet        #6c71c4
+! #define blue          #268bd2
+! #define cyan          #2aa198
+! #define green         #859900
 
-URxvt*scrollBar: False
+! ! Solarized Dark
+! #define base03        #002b36
+! #define base02        #073642
+! #define base01        #586e75
+! #define base00        #657b83
+! #define base0         #839496
+! #define base1         #93a1a1
+! #define base2         #eee8d5
+! #define base3         #fdf6e3
+ 
+! ! Solarized Light
+! #define base03        #fdf6e3
+! #define base02        #eee8d5
+! #define base01        #93a1a1
+! #define base00        #839496
+! #define base0         #657b83
+! #define base1         #586e75
+! #define base2         #073642
+! #define base3         #002b36
 
-URxvt.perl-ext: default,matcher
-URxvt.urlLauncher: luakit
-URxvt.keysym.C-Delete: perl:matcher
-URxvt.underlineURLs: true
+! Monokai
+#define base03        #49483e
+#define base02        #272822
+#define base01        #b9e85b
+#define base00        #f4bf75
+#define base0         #94e4f4
+#define base1         #a1efe4
+#define base2         #bab8ae
+#define base3         #f9f8f5
+#define yellow        #fd971f
+#define orange        #f92672
+#define red           #cc6633
+#define magenta       #9e68ff
+#define violet        #ae81ff
+#define blue          #1fc7e8
+#define cyan          #66d9ef
+#define green         #a6e22e
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background:            S_base03
+
+! *background:          base03
+! *foreground:          base0
+! *cursorColor:         base1
+! *fadeColor:           base03
+*background:          base02
+*foreground:          base2
+*cursorColor:         base2
+*fadeColor:           base02
+*fading:              20
+
+! Black
+*color0:              base02
+*color8:              base03
+! Red
+*color1:              red
+*color9:              orange
+! Green
+*color2:              green
+*color10:             base01
+! Yellow
+*color3:              yellow
+*color11:             base00
+! Blue
+*color4:              blue
+*color12:             base0
+! Magenta
+*color5:              magenta
+*color13:             violet
+! Cyan
+*color6:              cyan
+*color14:             base1
+! White
+*color7:              base2
+*color15:             base3
+
+urxvt*font: xft:Terminus:size=9
+urxvt*boldFont: xft:Terminus:size=9
+
+urxvt*scrollBar: False
+
+urxvt.perl-ext-common:      default,url-select
+urxvt.url-select.launcher:  /usr/bin/luakit
+urxvt.keysym.M-u:           perl:url-select:select_next
+urxvt.url-select.underline: true
+urxvt.colorUL:              #4682B4

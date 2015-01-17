@@ -1,4 +1,4 @@
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
-keysym Escape = Caps_Lock
-add Lock = Caps_Lock
+keycode 255 = Menu NoSymbol Menu
+keycode 254 = Tab ISO_Left_Tab Tab ISO_Left_Tab
+keysym Menu = Hyper_L NoSymbol Hyper_L
+keysym Tab = Alt_R Meta_R Alt_R Meta_R
