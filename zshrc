@@ -6,7 +6,7 @@ setopt appendhistory autocd extendedglob
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/scott/.zshrc'
+zstyle :compinstall filename '/home/$USER/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -16,7 +16,7 @@ colors
 prompt walters
 
 export PATH=${PATH}:/opt/android-sdk/platform-tools
-export GOPATH=/home/scott/code/go
+export GOPATH=/home/$USER/code/go
 export PYTHONPATH=/usr/lib/python3.4/site-packages
 # . /usr/share/zsh/site-contrib/powerline.zsh
 
@@ -34,8 +34,7 @@ alias hulu='google-chrome-stable --app="http://www.hulu.com" hush'
 
 alias key='eval $(keychain --eval -q ~/.ssh/id_rsa)'
 alias mosh='mosh --server="LANG=$LANG mosh-server"'
-alias mu='key && mosh sfrazier@206.190.128.252'
-alias mut='mu tmux attach'
+function mut() { key && mosh $1 tmux attach }
 
 alias ds='~/.suckless/wmstat/dwmstatus hush'
 alias wam='w mut'
@@ -51,20 +50,19 @@ alias lf='ls -lh'
 alias ld='ls -Alh'
 alias grep='grep --colour=auto'
 alias mkdir='mkdir -pv'
-alias cdgo='cd /home/scott/code/go/src/github.com/SaidinWoT'
+alias cdgo='cd $GOPATH/src'
 function cdls () { cd $* && ls }
 
 alias sql='sqlite3 -echo -header -column'
 
 alias syu='sudo pacman -Syu'
 
-alias -s {txt,c,py,lisp}=${EDITOR}
+alias -s {txt,c,py,lisp,go}=${EDITOR}
 alias -s {odt,doc,docx,ppt,pptx,xls,xlsx,rtf}='libreoffice'
 alias -s {png,jpg,jpeg,gif}='feh'
 alias -s pdf='epdfview'
 
 alias sc='wine ~/.wine/drive_c/Program\ Files/Starcraft/StarCraft.exe'
-alias rs='runescape --prmfile=oldschool.prm'
 
 alias emacs='emacs -nw'
 alias e='emacs'
@@ -72,10 +70,6 @@ alias wifi='wicd-curses'
 alias :q='exit'
 alias off='sudo systemctl poweroff'
 alias rbt='sudo systemctl reboot'
-
-function am () {
-    ln -s /home/scott/media/beets/flac/$@ /home/scott/media/google/music/$@
-}
 
 function s () {
     regex="s$@p"
